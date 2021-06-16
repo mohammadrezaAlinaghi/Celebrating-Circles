@@ -66,7 +66,8 @@ function randomColor() {
 }
 // Ball Maker
 function Ball() {
-    this.color = randomColor();
+
+    // this.color = randomColor();
     this.radius = Math.random() * 20 + 14;
     this.startradius = this.radius;
     this.x = this.radius;
@@ -75,10 +76,18 @@ function Ball() {
     this.dx = Math.round((Math.random() - 0.5) * 10);
     this.vel = Math.random() / 5;
     this.mouseHover = 0;
+    this.firstColor = randomColor();
+    this.secondColor = randomColor();
+    this.gradient = c.createLinearGradient((this.x - this.radius), (this.y - this.radius), (this.x + this.radius), (this.y + this.radius));
+    this.gradient.addColorStop(0, this.firstColor);
+    this.gradient.addColorStop(1, this.secondColor);
     this.update = function() {
         c.beginPath();
+        this.gradient = c.createLinearGradient((this.x - this.radius), (this.y - this.radius), (this.x + this.radius), (this.y + this.radius));
+        this.gradient.addColorStop(0, this.firstColor);
+        this.gradient.addColorStop(1, this.secondColor);
         c.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        c.fillStyle = this.color;
+        c.fillStyle = this.gradient;
         c.fill();
     };
 }
