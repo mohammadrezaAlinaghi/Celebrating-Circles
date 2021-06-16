@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrating Circles</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="start-window">
+        <h1>Welcome to "Celebrating Circles" Game!</h1>
+        <p>Just try to press these balloons with the mouse to explode! Every few seconds a ball is thrown at you. Be careful that the number of balls does not exceed 30 so that you do not lose! Each stage is harder than the previous one!</p>
+        <h2>Are you ready?</h2>
+        <button id='start-btn'>yes, I'm ready!</button>
+    </div>
+    <div id="win-window">
+        <h1>You Win!</h1>
+        <p>You have successfully passed this stage!
+        </p>
+        <h2>Ready for more hardship?</h2>
+        <button id='next-btn'>yes, I'm ready!</button>
+    </div>
+    <div id="lost-window">
+        <h1>You Lost!</h1>
+        <p>Sorry you lost! Would you like to start over and take revenge?
+        </p>
+        <h2>Would you like to play again?</h2>
+        <button id='restart-btn'>yes, I like!</button>
+    </div>
+
+    <div id='top-bar'>
+        <span id='sh-level'><i class="bi bi-star-fill"></i><span id='n-level'></span></span>
+        <span id='sh-bals'><i class="bi bi-exclamation-square-fill"></i></i><span id='n-bals'></span></span>
+        <span id='sh-kills'><i class="bi bi-check-circle-fill"></i><span id='n-kills'></span></span>
+    </div>
+    <canvas id='canvas'></canvas>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>
